@@ -1,0 +1,11 @@
+﻿global using JobFinder.Domain.Entities;
+global using Microsoft.EntityFrameworkCore;
+global using JobFinder.Application.Repository;
+global using JobFinder.Application.Services;
+global using Microsoft.Extensions.DependencyInjection;
+global using JobFinder.Infrastructure.Data;
+global using JobFinder.Infrastructure.Repositories;
+global using JobFinder.Infrastructure.Services;
+global using Microsoft.Extensions.Configuration;
+global using JobFinder.Application.DTOs;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;

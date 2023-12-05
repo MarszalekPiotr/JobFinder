@@ -1,0 +1,1 @@
+﻿global using JobFinder.Application.DTOs;
