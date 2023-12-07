@@ -1,7 +1,5 @@
 ﻿
 
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace JobFinder.Domain.Entities
 {
     public sealed  class ApplicationForJob

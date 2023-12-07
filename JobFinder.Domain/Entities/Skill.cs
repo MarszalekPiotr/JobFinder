@@ -1,7 +1,5 @@
 ﻿
 
-
-
 namespace JobFinder.Domain.Entities
 {
     public sealed class Skill

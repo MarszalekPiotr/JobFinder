@@ -11,7 +11,7 @@ namespace JobFinder.Infrastructure.Configurations
         public void Configure(EntityTypeBuilder<Company> builder)
         {
             builder.HasMany(com => com.Locations).WithOne(l => l.Company).HasForeignKey(l => l.CompanyId);
-            builder.HasMany(com => com.Jobs).WithOne(J => J.Company).HasForeignKey(j => j.CompanyId));
+            builder.HasMany(com => com.Jobs).WithOne(J => J.Company).HasForeignKey(j => j.CompanyId); 
         }
     }
 }

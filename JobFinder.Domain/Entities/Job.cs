@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Reflection.Metadata;
+﻿
 
 namespace JobFinder.Domain.Entities;
 
@@ -11,8 +10,8 @@ public sealed class Job
     public double MaxSalary { get; set; }
     // Relation properties
     [ForeignKey("CompanyId")]
-    public Guid CompanyId { get; set; }
-    public Company Company { get; set; }
+    public Guid? CompanyId { get; set; }
+    public Company? Company { get; set; }
     public IEnumerable<Location> Locations { get; set; }
     public IEnumerable<ApplicationForJob>? Applications { get; set; }
     public IEnumerable<Skill>? Skills { get; set; }

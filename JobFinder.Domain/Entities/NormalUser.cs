@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace JobFinder.Domain.Entities
 {
      public sealed class NormalUser
      {   
         // Q: is this Id even necessary?
-        public Guid Id { get; set; }
+        //public Guid Id { get; set; }
+        [Key]
         [ForeignKey("UserId")]
         public Guid UserId { get; set; }
         public User User { get; set; }
