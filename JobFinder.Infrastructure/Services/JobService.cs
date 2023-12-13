@@ -2,15 +2,14 @@
 
 internal sealed class JobService : IJobService
 {
-    private readonly IGenericRepository<Job> _jobRepository;
-    private readonly IGenericRepository<Location> _locationRepository;
+    private readonly IRepositoryCollection _repositoryCollection;
 
-    public JobService(IGenericRepository<Job> jobRepository)
-        => _jobRepository = jobRepository;
+    public JobService(IRepositoryCollection repositoryCollection)
+        => _repositoryCollection = repositoryCollection;
 
     public async Task<IEnumerable<JobDTO>> GetJobsAsync()
     {
-        var allJobs = await _jobRepository.GetAllAsync();
+        var allJobs = await _repositoryCollection._jobRepository.GetAllAsync();
 
         return allJobs.Select(x => new JobDTO()
         {
@@ -29,14 +28,15 @@ internal sealed class JobService : IJobService
             MinSalary = dto.MinSalary,
             MaxSalary = dto.MaxSalary,
             CategoryId = dto.CategoryId,
-            Locations = _locationRepository.GetByIdListAsync(dto.LocationsIds).Result,
-            Skills =  
+            Locations = _repositoryCollection._locationRepository.GetByIdListAsync(dto.LocationsIds).Result,
+            Skills =  _repositoryCollection._skillRepository.GetByIdListAsync(dto.SkillsIds).Result,
+            //CompanyId = dto.CompanyId,
         };
 
-        await _jobRepository.AddAsync(job);
+        await  _repositoryCollection._jobRepository.AddAsync(job);
     }
 
     public async Task DeleteJobAsync()
-        => await _jobRepository.DeleteAsync(new Job());
+        => await _repositoryCollection._jobRepository.DeleteAsync(new Job());
 }
 

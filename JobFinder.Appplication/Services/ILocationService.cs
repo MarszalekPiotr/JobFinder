@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace JobFinder.Application.Services
 {
-    internal interface ILocationService
+    public interface ILocationService
     {
+        Task<LocationDTO> GetLocationAsync(Guid Id);
+        Task AddLocationAsync(AddLocationDTO  location);
     }
 }
