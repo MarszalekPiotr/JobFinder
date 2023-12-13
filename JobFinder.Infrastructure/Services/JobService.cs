@@ -3,6 +3,7 @@
 internal sealed class JobService : IJobService
 {
     private readonly IGenericRepository<Job> _jobRepository;
+    private readonly IGenericRepository<Location> _locationRepository;
 
     public JobService(IGenericRepository<Job> jobRepository)
         => _jobRepository = jobRepository;
@@ -26,7 +27,10 @@ internal sealed class JobService : IJobService
         {
             Position = dto.Position,
             MinSalary = dto.MinSalary,
-            MaxSalary = dto.MaxSalary
+            MaxSalary = dto.MaxSalary,
+            CategoryId = dto.CategoryId,
+            Locations = _locationRepository.GetByIdListAsync(dto.LocationsIds).Result,
+            Skills =  
         };
 
         await _jobRepository.AddAsync(job);

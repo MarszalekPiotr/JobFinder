@@ -2,7 +2,7 @@
 
 namespace JobFinder.Domain.Entities
 {
-    public sealed class Company
+    public sealed class Company 
     {
         [Key]
         [ForeignKey("UserId")]

@@ -2,7 +2,8 @@
 
 namespace JobFinder.Infrastructure.Repositories;
 
-internal sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
+// Change: Changed T:entity to be BasicEntity
+internal sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BasicEntity
 {
     private readonly ApplicationDbContext _context;
 
@@ -25,4 +26,10 @@ internal sealed class GenericRepository<TEntity> : IGenericRepository<TEntity> w
 
         await _context.SaveChangesAsync();
     }
+
+    public async Task<TEntity> GetByIdAsync(Guid Id) 
+        => await _context.Set<TEntity>().FirstOrDefaultAsync(en => en.Id == Id);
+
+    public async Task<List<TEntity>> GetByIdListAsync(List<Guid> Ids)
+        => await _context.Set<TEntity>().Where(en => Ids.Contains(en.Id)).ToListAsync();
 }

@@ -2,9 +2,9 @@
 
 namespace JobFinder.Domain.Entities;
 
-public sealed class Job
+public sealed class Job : BasicEntity
 {
-    public Guid Id { get; set; }
+    
     public string Position { get; set; } = string.Empty;
     public double MinSalary { get; set; }
     public double MaxSalary { get; set; }

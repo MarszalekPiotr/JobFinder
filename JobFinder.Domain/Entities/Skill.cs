@@ -2,9 +2,9 @@
 
 namespace JobFinder.Domain.Entities
 {
-    public sealed class Skill
+    public sealed class Skill : BasicEntity
     {
-        public Guid Id { get; set; }
+        
         public string Name { get; set; } = string.Empty;    
 
         // Relation with NormalUser

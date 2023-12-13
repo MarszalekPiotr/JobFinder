@@ -5,9 +5,8 @@ namespace JobFinder.Domain.Entities
     public sealed  class User // Identity inheritance
     {
 
-            // Some Basic User Data
-            public Guid Id { get; set; }
-            
+            // So 
+
 
             // Company / "Normal User" Data --> 2 entities or here nullable fields?
             public Guid? NormalUserId { get; set; }

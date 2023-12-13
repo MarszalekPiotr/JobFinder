@@ -10,5 +10,7 @@ public static class InfrastructrueExtensions
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
         services.AddScoped<IJobService, JobService>();
+        services.AddScoped<ICategoryService, CategoryService>();
+     
     }
 }

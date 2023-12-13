@@ -2,9 +2,9 @@
 
 namespace JobFinder.Domain.Entities
 {
-    public sealed  class ApplicationForJob
+    public sealed  class ApplicationForJob : BasicEntity
     {
-        public Guid Id { get; set; }
+        
         public DateTime Date { get; set; }
         // Q: how to handle file store in app
         public string CvFilePath { get; set; } = string.Empty;

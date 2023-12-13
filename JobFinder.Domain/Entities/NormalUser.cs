@@ -2,7 +2,7 @@
 
 namespace JobFinder.Domain.Entities
 {
-     public sealed class NormalUser
+     public sealed class NormalUser 
      {   
         // Q: is this Id even necessary?
         //public Guid Id { get; set; }

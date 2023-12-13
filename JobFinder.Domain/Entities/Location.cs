@@ -2,9 +2,9 @@
 
 namespace JobFinder.Domain.Entities
 {
-    public sealed class Location
+    public sealed class Location : BasicEntity
     {
-        public Guid Id { get; set; }
+        
         public double X { get; set; }
         public double Y { get; set; }
 
