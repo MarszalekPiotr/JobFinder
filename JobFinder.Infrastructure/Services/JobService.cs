@@ -16,7 +16,10 @@ internal sealed class JobService : IJobService
             Id = x.Id,
             Position = x.Position,
             MaxSalary = x.MaxSalary,
-            MinSalary = x.MinSalary
+            MinSalary = x.MinSalary,
+            Locations = x.Locations, // null??? why if it is in DB added correctly? here sth like get locations for job id  method ?
+            Skills = x.Skills,  // null???
+            
         });
     }
 

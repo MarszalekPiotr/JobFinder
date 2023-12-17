@@ -21,12 +21,18 @@ namespace JobFinder.Infrastructure.Services
 
             };
 
-            _repositoryCollection._locationRepository.AddAsync(location);
+            await _repositoryCollection._locationRepository.AddAsync(location);
         }
 
-        public Task<LocationDTO> GetLocationAsync(Guid Id)
+        public async Task<LocationDTO> GetLocationAsync(Guid Id)
         {
-            throw new NotImplementedException();
+            var location = await _repositoryCollection._locationRepository.GetByIdAsync(Id);
+            return new LocationDTO()
+            {
+                Name = location.Name,
+                X = location.X,
+                Y = location.Y
+            };
         }
     }
 }

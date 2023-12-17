@@ -11,7 +11,10 @@ public static class InfrastructrueExtensions
 
         services.AddScoped<IJobService, JobService>();
         services.AddScoped<ICategoryService, CategoryService>();
+        services.AddScoped<ILocationService, LocationService>();
+        services.AddScoped<ISkillService, SkillService>();
         services.AddScoped<IRepositoryCollection, RepositoryCollection>();
+        services.AddScoped<IServiceContainer, ServiceContainer>();
      
     }
 }
